@@ -1,0 +1,30 @@
+<body ng-controller="View1Ctrl">
+<div class="wrapper" >
+	<p>Alumnos</p>
+	<p>Cantidad de alumnos {{alumnos.length}}</p>
+
+<ul ng-repeat="alumno in alumnos | orderBy: 'nombre' ">
+<p class="contact-item">{{alumno.nombre}}</p>
+<p  class="curso"> {{alumno.curso}}</p>
+</ul>	
+<button id="buttonAdd" ng-click="showForm()" ng-hide="FormVisibility" type="button" class="btn btn-default">Add</button>
+</div>
+</br>
+<form action="" method="POST" role="form" ng-show="FormVisibility" class="wrapper">
+	<legend>Form title</legend>
+
+	<div class="form-group" class="wrapper">
+		<label for="name">Name:</label>
+		<input type="text" class="form-control" id="name" name="name" placeholder="Ingrese Nombre" ng-model="alumnoNuevo.name">
+	</div>
+
+<div class="form-group" class="wrapper" >
+		<label for="curso">Curso:</label>
+		<input type="text" class="form-control" id="curso" name="curso" placeholder="Ingrese curso" ng-model="alumnoNuevo.curso">
+	</div>
+	
+
+	<button type="button" class="btn btn-primary" ng-click="alumnoAdd()">add</button>
+</form>
+
+</body>
